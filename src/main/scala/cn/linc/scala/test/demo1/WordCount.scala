@@ -1,4 +1,4 @@
-package cn.linc.scala.test1
+package cn.linc.scala.test.demo1
 
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD
