@@ -1,7 +1,7 @@
-package cn.linc.scala.test.demo1
+package cn.linc.spark.demo1
 
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
 
 object WordCount {
 
@@ -10,7 +10,7 @@ object WordCount {
     val conf = new SparkConf().setMaster("local[2]").setAppName("wordCountTest")
     val sc: SparkContext = new SparkContext(conf)
     // 2. 读取文件并计算词频
-    val source: RDD[String] = sc.textFile("src/main/dataset/wordcount.txt", 2)
+    val source: RDD[String] = sc.textFile("D:\\bigdata\\spark\\src\\main\\resources\\wordcount.txt", 2)
     val words: RDD[String] = source.flatMap { line => line.split(" ") }
     val wordsTuple: RDD[(String, Int)] = words.map { word => (word, 1) }
     val wordsCount: RDD[(String, Int)] = wordsTuple.reduceByKey { (x, y) => x + y }
