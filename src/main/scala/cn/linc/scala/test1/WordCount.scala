@@ -3,7 +3,7 @@ package cn.linc.scala.test1
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.rdd.RDD
 
-object WordCount1 {
+object WordCount {
 
   def main(args: Array[String]): Unit = {
     // 1. 创建 Spark Context
